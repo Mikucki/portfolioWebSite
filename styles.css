@@ -1,3 +1,4 @@
+/* Variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
 
 :root {
     --black: #171321;
@@ -11,16 +12,22 @@
     --mono: "Oxygen mono", monospace;
     --sans: Oxygen, sans-serif;
 }
- 
+
+
+/* border box model: https://css-tricks.com/box-sizing/ */
 
 html {
     box-sizing: border-box;
 }
+
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
+
+
+/* generic styles for the page */
 
 body {
     padding: 0;
@@ -39,29 +46,41 @@ h3 {
 
 a {
     color: var(--magenta);
-
 }
 
-  
 a:hover {
     color: var(--hotmag);
     text-decoration: none;
+}
+img {
+  width: 100%;
+}
 
+
+/* background color divs */
+
+.section-plum {
+    background-color: var(--plum);
+}
+.section-blue {
+    background-color: var(--dkblue);
 }
 
 .gradient {
-    background: linear-gradient(90deg, rgba(36,0,26,1) 7%, rgba(45,1,32,1) 10%, rgba(121,9,87,1) 44%, rgba(255,113,0,1) 100%);
+    background: linear-gradient(90deg, rgba(255, 23, 228, 1) 0%, rgba(134, 251, 251, 1) 100%);
     height: 2px;
 }
 
-/* intro styles */ 
+
+/* intro styles */
 
 #intro {
     padding: 4rem 1rem 10rem 1rem;
+    padding-bottom: 10rem;
     max-width: 1200px;
     margin: 0 auto;
 }
-  
+
 #intro p {
     font-size: 1rem;
     line-height: 1.5;
@@ -71,7 +90,7 @@ a:hover {
     font-family: var(--mono);
     font-size: 1rem;
 }
-  
+
 .name span {
     font-family: var(--sans);
     font-size: 4rem;
@@ -79,51 +98,38 @@ a:hover {
     display: block;
     font-weight: 300;
 }
-  
-
 
 #intro h2 {
     font-size: 4rem;
-  font-size: 4rem; 
-    font-size: 4rem;
-
 }
 
 
-  
+/* contact section */
+
 #contact {
     width: 400px;
     text-align: center;
     margin: 0 auto;
-    padding: 2.5rem 0;
+    padding: 4rem 0;
 }
-  
-#contact p{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    
+
+#contact p:last-child {
+    margin-top: 3rem;
 }
 
 
+/* navigation */
 
-.section-plum {
-    background-color: var(--plum);
-}
-
-.section-blue {
-    background-color: var(--dkblue);   
-}
-  
 nav {
     font-family: var(--mono);
     font-size: 80%;
-    padding: 1rem;
+    padding: 4rem 1rem;
 }
-  
+
 nav h1 a {
     font-family: var(--sans);
 }
-  
+
 nav ul {
     margin: 0;
     padding: 0;
@@ -134,17 +140,17 @@ nav ul {
     align-items: center;
     gap: 2rem;
 }
-  
+
 nav li:first-child {
     flex-basis: 100%;
     text-align: center;
 }
-  
+
 nav [class*="fa-"] {
     font-size: 150%;
     color: var(--aqua);
 }
-  
+
 nav h1 [class*="fa-"] {
     font-size: 100%;
     color: var(--aqua);
@@ -155,36 +161,133 @@ nav a {
     text-decoration: none;
     display: block;
 }
-  
+
 nav a:hover,
 nav [class*="fa-"]:hover {
     color: var(--magenta);
 }
-  
+
 .button {
     background-color: var(--magenta);
     color: white;
     padding: 0.5rem;
     border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--mono);
 }
-  
+
 .button:hover {
     color: white;
     background-color: var(--hotmag);
 }
-  
-@media (min-width: 850px) {
-    nav {
+
+/* projects section */
+#projects {
+  padding: 4rem 1rem;
+}
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5);
+}
+#projects h3 {
+    color: var(--aqua);
+}
+
+#projects h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+  margin: 0;
+}
+.blackbox {
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--black);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+}
+#projects img {
+    margin: 2rem 0 4rem 0;
+    padding: 1rem;
+    border-left: 1px solid var(--aqua);
+    border-top: 1px solid var(--aqua);
+    border-radius: 25px;
+}
+/* footer section */
+
+footer {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 3rem;
+}
+@media (min-width: 800px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  #projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+  .text {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    order: 2;
+    text-align: right;
+  }
+  #projects ul {
+    justify-content: flex-end;
+  }
+  #projects .reverse .text {
+    grid-column: 1/7;
+    text-align: left;
+  }
+  #projects .reverse img {
+    grid-column: 6/11;
+    grid-row: 1/2;
+  }
+  #projects .reverse ul {
+    justify-content: flex-start;
+  }
+
+  #projects {
       max-width: 1200px;
       margin: 0 auto;
+  }
+  
+}
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
     }
     nav li:first-child {
-      flex-basis: auto;
-      text-align: left;
-      margin-right: auto;
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
     }
 }
-  
+
 fotter ul {
     list-style-type: none;
     display: flex;
@@ -205,7 +308,3 @@ fotter p {
     text-align: center;
     font-size: 0.8rem;
 }
-  
-
-  
-  
