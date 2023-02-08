@@ -74,21 +74,56 @@ img {
 
 /* intro styles */
 
+#intro .dis .name {
+  font-size: 1rem;
+}
+
+#intro .dis .name span {
+  font-size: 2rem;
+}
+
+#intro .dis h2 {
+  font-size: 2rem;
+}
+
 #intro {
-  padding: 4rem 1rem 10rem 1rem;
-  padding-bottom: 10rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+#intro img {
+  height: 100%;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  border: 2px solid var(--magenta);
 }
 
 #intro p {
   font-size: 1rem;
   line-height: 1.5;
+  padding: 0;
+  margin: 0;
 }
 
 #intro .name {
   font-family: var(--mono);
   font-size: 1rem;
+}
+
+#intro .dis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50vw;
+  height: 70%;
 }
 
 .name span {
@@ -100,7 +135,7 @@ img {
 }
 
 #intro h2 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .projects {
@@ -111,10 +146,12 @@ img {
 /* contact section */
 
 #contact {
-  width: 400px;
+  display: flex;
   text-align: center;
-  margin: 0 auto;
-  padding: 4rem 0;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
 }
 
 #contact p:last-child {
@@ -244,6 +281,17 @@ footer ul {
   font-size: 3rem;
 }
 @media (min-width: 800px) {
+  #intro {
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+  }
+  #intro .name {
+    font-size: 2rem;
+  }
+  #intro .dis .name span {
+    font-size: 2rem;
+  }
   .project {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -285,6 +333,9 @@ footer ul {
   }
 }
 @media (min-width: 850px) {
+  #intro {
+    max-width: 1200px;
+  }
   nav {
     max-width: 1200px;
     margin: 0 auto;
@@ -293,6 +344,13 @@ footer ul {
     flex-basis: auto;
     text-align: left;
     margin-right: auto;
+  }
+}
+
+@media (min-width: 1250px) {
+  #intro img {
+    width: auto;
+    height: 70vh;
   }
 }
 
@@ -315,4 +373,24 @@ fotter p {
   margin: 2rem;
   text-align: center;
   font-size: 0.8rem;
+}
+
+.skills {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+}
+
+ul {
+  padding: 0;
+}
+
+.skills li img {
+  height: 10vh;
+  width: auto;
 }
