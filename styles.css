@@ -1,11 +1,11 @@
 /* Variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
 
 :root {
-  --black: #171321;
-  --dkblue: #2198a6;
-  --plum: #d97904;
-  --hotmag: #f29f05;
-  --magenta: #f2b705;
+  --black: #002f2f;
+  --dkblue: #046380;
+  --plum: #efecca;
+  --hotmag: #a7a37e;
+  --magenta: #e6e2af;
   --aqua: #2abfbf;
   --white: #f7f8fa;
   --font-size: 1.3rem;
@@ -58,9 +58,11 @@ img {
 
 .section-plum {
   background-color: var(--plum);
+  position: relative;
 }
 .section-blue {
   background-color: var(--dkblue);
+  position: relative;
 }
 
 .gradient {
@@ -94,6 +96,8 @@ img {
   align-items: center;
   flex-direction: column;
   padding: 2rem 0;
+  position: relative;
+  background-color: var(--dkblue);
 }
 
 #intro img {
@@ -148,14 +152,12 @@ img {
 #contact {
   display: flex;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 50vh;
-}
-
-#contact p:last-child {
-  margin-top: 3rem;
+  height: 70vh;
+  padding: 15vh 2vw 5vh 2vw;
+  color: var(--black);
 }
 
 /* navigation */
@@ -163,7 +165,11 @@ img {
 nav {
   font-family: var(--mono);
   font-size: 80%;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 20vh;
 }
 
 nav h1 a {
@@ -180,12 +186,6 @@ nav ul {
   align-items: center;
   gap: 2rem;
 }
-
-nav li:first-child {
-  flex-basis: 100%;
-  text-align: center;
-}
-
 nav [class*="fa-"] {
   font-size: 150%;
   color: var(--aqua);
@@ -194,6 +194,11 @@ nav [class*="fa-"] {
 nav h1 [class*="fa-"] {
   font-size: 100%;
   color: var(--aqua);
+}
+
+nav h1 {
+  text-align: center;
+  margin: 1rem 0;
 }
 
 nav a {
@@ -280,7 +285,17 @@ footer ul {
   gap: 3rem;
   font-size: 3rem;
 }
+
+#contact {
+  min-width: 6--px;
+}
+
 @media (min-width: 800px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   #intro {
     height: 80vh;
     display: flex;
@@ -337,20 +352,15 @@ footer ul {
     max-width: 1200px;
   }
   nav {
-    max-width: 1200px;
     margin: 0 auto;
-  }
-  nav li:first-child {
-    flex-basis: auto;
-    text-align: left;
-    margin-right: auto;
+    padding: 4rem 5rem;
   }
 }
 
 @media (min-width: 1250px) {
   #intro img {
     width: auto;
-    height: 70vh;
+    height: 40vh;
   }
 }
 
@@ -384,6 +394,7 @@ fotter p {
   padding: 0;
   margin: 0;
   min-width: 100%;
+  gap: 20px;
 }
 
 ul {
@@ -393,4 +404,66 @@ ul {
 .skills li img {
   height: 10vh;
   width: auto;
+}
+
+.custom-shape-divider-top-1676031723 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1676031723 svg {
+  position: relative;
+  display: block;
+  width: calc(160% + 1.3px);
+  height: 148px;
+}
+
+.custom-shape-divider-top-1676031723 .shape-fill {
+  fill: var(--black);
+  margin: 2rem 2rem;
+}
+
+.custom-shape-divider-top-1676033092 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1676033092 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 144px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1676033092 .shape-fill {
+  fill: var(--dkblue);
+}
+
+.custom-shape-divider-top-1676033438 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1676033438 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 144px;
+}
+
+.custom-shape-divider-top-1676033438 .shape-fill {
+  fill: var(--plum);
 }
