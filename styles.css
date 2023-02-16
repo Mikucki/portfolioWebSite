@@ -17,6 +17,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -52,6 +53,7 @@ a:hover {
 }
 img {
   width: 100%;
+  height: 300px;
 }
 
 /* background color divs */
@@ -115,6 +117,7 @@ img {
   line-height: 1.5;
   padding: 0;
   margin: 0;
+  max-width: 800px;
 }
 
 #intro .name {
@@ -149,7 +152,7 @@ img {
 
 /* contact section */
 
-#contact {
+#skills {
   display: flex;
   text-align: center;
   justify-content: space-between;
@@ -214,7 +217,7 @@ nav [class*="fa-"]:hover {
 
 .button {
   background-color: var(--magenta);
-  color: white;
+  color: black;
   padding: 0.5rem;
   border-radius: 5px;
   text-decoration: none;
@@ -286,7 +289,7 @@ footer ul {
   font-size: 3rem;
 }
 
-#contact {
+#skills {
   min-width: 6--px;
 }
 
@@ -466,4 +469,9 @@ ul {
 
 .custom-shape-divider-top-1676033438 .shape-fill {
   fill: var(--plum);
+}
+
+.demo {
+  font-size: 1rem;
+  color: var(--aqua);
 }
